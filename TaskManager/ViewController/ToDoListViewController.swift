@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CoreData
+
 
 class ToDoListViewController: UIViewController {
 
@@ -14,7 +14,7 @@ class ToDoListViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "Task Manager"
-        let task =  Task()
+       
         
     }
 
