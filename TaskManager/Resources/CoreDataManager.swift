@@ -13,7 +13,7 @@ class CoreDataManager {
     
     private init() {}
     var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Taks")
+        let container = NSPersistentContainer(name: "Tasks")
         container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 fatalError("Unresolved error\(error),\(error.userInfo)")
@@ -40,7 +40,7 @@ class CoreDataManager {
     func getAll() -> [Task] {
         var tasks = [Task] ()
         let fatchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-        let sortByDueDate = NSSortDescriptor(key: "DueDate", ascending: true)
+        let sortByDueDate = NSSortDescriptor(key: "dueDate", ascending: true)
         fatchRequest.sortDescriptors = [sortByDueDate]
         do {
             tasks = try context.fetch(fatchRequest)
@@ -50,7 +50,7 @@ class CoreDataManager {
         return tasks
     }
     
-    func addNewTask(name: String , desp:String , dueDate: Date) {
+    func addNewTask(name: String , desp: String , dueDate: Date) {
         let task = Task(context: context)
         task.name = name
         task.desp = desp

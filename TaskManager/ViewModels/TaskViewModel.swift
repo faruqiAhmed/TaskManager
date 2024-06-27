@@ -33,7 +33,7 @@ struct TaskViewModel {
         
     }
     var completed: Bool {
-        task.completed ?? Bool()
+        task.completed
     }
     
     

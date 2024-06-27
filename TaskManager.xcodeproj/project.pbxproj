@@ -17,6 +17,8 @@
 		E25319352C2C87D500270AEC /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25319342C2C87D500270AEC /* TaskListViewModel.swift */; };
 		E25319372C2C982C00270AEC /* AddNewTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25319362C2C982C00270AEC /* AddNewTaskViewModel.swift */; };
 		E25319392C2D233B00270AEC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25319382C2D233B00270AEC /* CoreDataManager.swift */; };
+		E253193B2C2D835B00270AEC /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253193A2C2D835B00270AEC /* AddNewTaskViewController.swift */; };
+		E253193D2C2DCF7400270AEC /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253193C2C2DCF7400270AEC /* ToDoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E25319342C2C87D500270AEC /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 		E25319362C2C982C00270AEC /* AddNewTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewModel.swift; sourceTree = "<group>"; };
 		E25319382C2D233B00270AEC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E253193A2C2D835B00270AEC /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
+		E253193C2C2DCF7400270AEC /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				E253191A2C2C314C00270AEC /* ToDoListViewController.swift */,
+				E253193A2C2D835B00270AEC /* AddNewTaskViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 		E253192E2C2C646A00270AEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E253193C2C2DCF7400270AEC /* ToDoTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,7 +202,9 @@
 				E25319332C2C80EE00270AEC /* TaskViewModel.swift in Sources */,
 				E25319192C2C314C00270AEC /* SceneDelegate.swift in Sources */,
 				E25319392C2D233B00270AEC /* CoreDataManager.swift in Sources */,
+				E253193B2C2D835B00270AEC /* AddNewTaskViewController.swift in Sources */,
 				E25319352C2C87D500270AEC /* TaskListViewModel.swift in Sources */,
+				E253193D2C2DCF7400270AEC /* ToDoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

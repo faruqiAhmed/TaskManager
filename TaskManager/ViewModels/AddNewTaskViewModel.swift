@@ -9,6 +9,7 @@ import Foundation
 
 class AddNewTaskViewModel {
     func addTask(name: String, desp: String, dueDate: Date){
-        
+        CoreDataManager.shared.addNewTask(name: name, desp: desp, dueDate: dueDate)
     }
 }
+
