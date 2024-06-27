@@ -19,6 +19,7 @@
 		E25319392C2D233B00270AEC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25319382C2D233B00270AEC /* CoreDataManager.swift */; };
 		E253193B2C2D835B00270AEC /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253193A2C2D835B00270AEC /* AddNewTaskViewController.swift */; };
 		E253193D2C2DCF7400270AEC /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253193C2C2DCF7400270AEC /* ToDoTableViewCell.swift */; };
+		E253193F2C2E014500270AEC /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253193E2C2E014500270AEC /* SummaryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E25319382C2D233B00270AEC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E253193A2C2D835B00270AEC /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
 		E253193C2C2DCF7400270AEC /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		E253193E2C2E014500270AEC /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				E253193C2C2DCF7400270AEC /* ToDoTableViewCell.swift */,
+				E253193E2C2E014500270AEC /* SummaryTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				E25319172C2C314C00270AEC /* AppDelegate.swift in Sources */,
 				E25319332C2C80EE00270AEC /* TaskViewModel.swift in Sources */,
 				E25319192C2C314C00270AEC /* SceneDelegate.swift in Sources */,
+				E253193F2C2E014500270AEC /* SummaryTableViewCell.swift in Sources */,
 				E25319392C2D233B00270AEC /* CoreDataManager.swift in Sources */,
 				E253193B2C2D835B00270AEC /* AddNewTaskViewController.swift in Sources */,
 				E25319352C2C87D500270AEC /* TaskListViewModel.swift in Sources */,
