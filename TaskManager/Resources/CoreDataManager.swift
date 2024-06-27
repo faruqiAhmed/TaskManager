@@ -61,6 +61,7 @@ class CoreDataManager {
         task.completedOn = dueDate.advanced(by: 100000)
         saveContext()
     }
+    
     func toggleCompleted(id: UUID) {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         let predicate = NSPredicate(format: "id=%@",id.uuidString)
@@ -72,10 +73,10 @@ class CoreDataManager {
 //                    task.completedOn = Date()
 //                }
 //            }
-            if let fetchTask = try context.fetch(fetchRequest).first(where: { $0.id == id}){
-                fetchTask.completed = !fetchTask.completed
-                if fetchTask.completed {
-                    fetchTask.completedOn = Date()
+            if let fetchedTask = try context.fetch(fetchRequest).first(where: { $0.id == id}){
+                fetchedTask.completed = !fetchedTask.completed
+                if fetchedTask.completed {
+                    fetchedTask.completedOn = Date()
                 }
             }
             saveContext()
@@ -84,6 +85,23 @@ class CoreDataManager {
             print("Error toggleing state:\(error.userInfo),\(error.localizedDescription)")
             
         }
+    }
+    
+    func deleteTask(id: UUID) {
+        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id=%@", id.uuidString)
+        do {
+            let fetchedTasks = try context.fetch(fetchRequest)
+            for task in fetchedTasks {
+                context.delete(task)
+            }
+            saveContext()
+        } catch  let  error {
+            print(error.localizedDescription)
+        }
+        
+            
+        
     }
     
 }
