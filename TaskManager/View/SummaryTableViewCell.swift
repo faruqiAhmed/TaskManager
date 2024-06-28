@@ -10,7 +10,7 @@ import UIKit
 class SummaryTableViewCell: UITableViewCell {
 
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
+     let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = . fill

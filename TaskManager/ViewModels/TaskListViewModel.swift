@@ -7,7 +7,7 @@
 
 import Foundation
 class TaskListViewModel {
-    let tasks = [TaskViewModel]()
+    var tasks = [TaskViewModel]()
     init () {
         getAll()
     }
@@ -16,7 +16,7 @@ class TaskListViewModel {
     }
     
     func getAll () {
-        
+        tasks = CoreDataManager.shared.getAll().map(TaskViewModel.init)
     }
     
     func numberOfRows(by section: Int) -> Int {
@@ -37,11 +37,12 @@ class TaskListViewModel {
     }
     
     func  toggleCompletedTask(task: TaskViewModel) {
+        CoreDataManager.shared.toggleCompleted(id: task.id)
         getAll()
     }
     func deletItem(task: TaskViewModel) {
+        CoreDataManager.shared.deleteTask(id: task.id)
         getAll()
-        
     }
     
 }
