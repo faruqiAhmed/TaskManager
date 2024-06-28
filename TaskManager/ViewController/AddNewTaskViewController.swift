@@ -117,16 +117,16 @@ class AddNewTaskViewController: UIViewController {
             return
         }
         
-        guard  let desp = descriptionTextField.text else {
+        guard  let details = descriptionTextField.text else {
             return 
         }
         let duedate = duedatePicker.date
         
         switch viewModel.operationType {
         case .crete:
-            viewModel.addTask(name: taskName, desp: desp, dueDate: duedate)
+            viewModel.addTask(name: taskName, details: details, dueDate: duedate)
         case .update:
-            viewModel.updateTask(id: viewModel.taskId, name: taskName, desp: desp, dueDate: duedate)
+            viewModel.updateTask(id: viewModel.taskId, name: taskName, desp: details, dueDate: duedate)
         }
         
         navigationController?.popViewController(animated: true)

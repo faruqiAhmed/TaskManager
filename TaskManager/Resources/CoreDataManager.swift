@@ -52,10 +52,10 @@ class CoreDataManager {
         return tasks
     }
     
-    func addNewTask(name: String , desp: String , dueDate: Date) {
+    func addNewTask(name: String , details: String , dueDate: Date) {
         let task = Task(context: context)
         task.task_name = name
-        task.task_details = desp
+        task.task_details = details
         task.due_date = dueDate
         
         task.id = UUID()
@@ -64,14 +64,14 @@ class CoreDataManager {
         saveContext()
     }
     
-    func updateTask(id: UUID, name: String , desp: String , dueDate: Date) {
+    func updateTask(id: UUID, name: String , details: String , dueDate: Date) {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id=%@", id.uuidString)
         do {
             let fetchedTasks = try context.fetch(fetchRequest)
             if let dbTask = fetchedTasks.first {
                 dbTask.task_name = name
-                dbTask.task_details = desp
+                dbTask.task_details = details
                 dbTask.due_date = dueDate
                 dbTask.completion_date = dueDate.advanced(by: 100000)
             }

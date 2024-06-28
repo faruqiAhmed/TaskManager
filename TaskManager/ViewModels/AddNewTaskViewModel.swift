@@ -17,12 +17,12 @@ class AddNewTaskViewModel {
         self.selectedTask = selectedTask
     }
     
-    func addTask(name: String, desp: String, dueDate: Date){
-        CoreDataManager.shared.addNewTask(name: name, desp: desp, dueDate: dueDate)
+    func addTask(name: String, details: String, dueDate: Date){
+        CoreDataManager.shared.addNewTask(name: name, details: details, dueDate: dueDate)
     }
     
     func updateTask(id: UUID, name: String, desp: String, dueDate: Date){
-        CoreDataManager.shared.updateTask(id: id, name: name, desp: desp, dueDate: dueDate)
+        CoreDataManager.shared.updateTask(id: id, name: name, details: desp, dueDate: dueDate)
     }
     
     var barButtonTitle: String {
@@ -56,7 +56,7 @@ class AddNewTaskViewModel {
         guard let selectedTask = selectedTask else {
             return ""
         }
-        return selectedTask.desp
+        return selectedTask.details
     }
     
     var dueDate: Date {

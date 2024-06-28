@@ -21,7 +21,7 @@ struct TaskViewModel {
         task.task_name ?? ""
     }
     
-    var desp: String {
+    var details: String {
         task.task_details ?? ""
     }
     var dueDate: Date {
