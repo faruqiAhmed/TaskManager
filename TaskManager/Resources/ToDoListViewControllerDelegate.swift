@@ -44,4 +44,13 @@ extension ToDoListViewController:  UITableViewDelegate {
         ViewModel.deletItem(task: task)
         tableView.reloadData()
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let task = ViewModel.task(by: indexPath.row)
+        let vc: AddNewTaskViewController = AddNewTaskViewController()
+        vc.viewModel = AddNewTaskViewModel(operationType: .update, selectedTask: task)
+        self.navigationController?.pushViewController(vc, animated: true)
+
+      //  let newViewController = TaskDetailViewController()
+           // self.navigationController?.pushViewController(TaskDetailViewController(), animated: true)
+    }
 }

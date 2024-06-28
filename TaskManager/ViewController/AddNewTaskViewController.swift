@@ -57,19 +57,30 @@ class AddNewTaskViewController: UIViewController {
         
     }()
     
-    let viewModel = AddNewTaskViewModel()
+    
+    var viewModel = AddNewTaskViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        switch viewModel.operationType {
+        case .crete:
+        print("")
+        case .update:
+            taskNameTextField.text = viewModel.taskName
+            descriptionTextField.text = viewModel.details
+            duedatePicker.minimumDate = viewModel.dueDate
+        }
     }
     
     private func setupView() {
         view.backgroundColor = UIColor.systemBackground
-        title = "Add New Task"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:.save, target: self, action: #selector(saveTask))
+        title =  viewModel.navigationTitle
+    
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: viewModel.barButtonTitle, style: .plain, target: self, action: #selector(saveOrUpdateTask))
+
         [taskNameLabel, taskNameTextField, taskDescriptionLabel,descriptionTextField,dueDateLabel,duedatePicker].forEach { subViewToadd in
             view.addSubview(subViewToadd)
-            
         }
         
         setupConstraints()
@@ -98,7 +109,7 @@ class AddNewTaskViewController: UIViewController {
     
     
    
-    @objc  func saveTask() {
+    @objc  func saveOrUpdateTask() {
         guard let taskName = taskNameTextField.text, !taskName.isEmpty else {
             let alert = UIAlertController(title: "Error", message: "name can't be empty", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "ok", style: .default))
@@ -110,7 +121,13 @@ class AddNewTaskViewController: UIViewController {
             return 
         }
         let duedate = duedatePicker.date
-        viewModel.addTask(name: taskName, desp: desp, dueDate: duedate)
+        
+        switch viewModel.operationType {
+        case .crete:
+            viewModel.addTask(name: taskName, desp: desp, dueDate: duedate)
+        case .update:
+            viewModel.updateTask(id: viewModel.taskId, name: taskName, desp: desp, dueDate: duedate)
+        }
         
         navigationController?.popViewController(animated: true)
     }

@@ -7,8 +7,11 @@
 
 import Foundation
 class TaskListViewModel {
-    var tasks = [TaskViewModel]()
-    init () {
+    
+    var tasks: [TaskViewModel]
+    
+    init (tasks: [TaskViewModel] = []) {
+        self.tasks = tasks
         getAll()
     }
     var numberOfTask: Int {
@@ -41,7 +44,11 @@ class TaskListViewModel {
         getAll()
     }
     func deletItem(task: TaskViewModel) {
-        CoreDataManager.shared.deleteTask(id: task.id)
+        CoreDataManager.shared.deleteTask(by: task.id)
+        getAll()
+    }
+    func TaskViewDetails(task: TaskViewModel) {
+        CoreDataManager.shared.deleteTask(by: task.id)
         getAll()
     }
     

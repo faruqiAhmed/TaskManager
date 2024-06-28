@@ -18,24 +18,21 @@ struct TaskViewModel {
     }
     
     var name: String {
-        task.name ?? ""
+        task.task_name ?? ""
     }
     
     var desp: String {
-        task.desp ?? ""
+        task.task_details ?? ""
     }
     var dueDate: Date {
-        task.dueDate ?? Date()
+        task.due_date ?? Date()
         
     }
     var completedOn: Date {
-        task.completedOn ?? Date()
+        task.completion_date ?? Date()
         
     }
     var completed: Bool {
-        task.completed
+        task.task_status
     }
-    
-    
 }
-

@@ -25,6 +25,7 @@
 		E253194A2C2E7C5A00270AEC /* 1719549734134.json in Resources */ = {isa = PBXBuildFile; fileRef = E25319492C2E7C5A00270AEC /* 1719549734134.json */; };
 		E253194C2C2E7F4200270AEC /* ToDoListViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253194B2C2E7F4200270AEC /* ToDoListViewControllerDataSource.swift */; };
 		E253194E2C2E80A500270AEC /* ToDoListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253194D2C2E80A500270AEC /* ToDoListViewControllerDelegate.swift */; };
+		E25319502C2E9DF000270AEC /* TaskDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253194F2C2E9DF000270AEC /* TaskDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		E25319492C2E7C5A00270AEC /* 1719549734134.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1719549734134.json; sourceTree = "<group>"; };
 		E253194B2C2E7F4200270AEC /* ToDoListViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerDataSource.swift; sourceTree = "<group>"; };
 		E253194D2C2E80A500270AEC /* ToDoListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerDelegate.swift; sourceTree = "<group>"; };
+		E253194F2C2E9DF000270AEC /* TaskDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				E25319322C2C80EE00270AEC /* TaskViewModel.swift */,
 				E25319342C2C87D500270AEC /* TaskListViewModel.swift */,
 				E25319362C2C982C00270AEC /* AddNewTaskViewModel.swift */,
+				E253194F2C2E9DF000270AEC /* TaskDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				E253193F2C2E014500270AEC /* SummaryTableViewCell.swift in Sources */,
 				E25319392C2D233B00270AEC /* CoreDataManager.swift in Sources */,
 				E253193B2C2D835B00270AEC /* AddNewTaskViewController.swift in Sources */,
+				E25319502C2E9DF000270AEC /* TaskDetailsViewModel.swift in Sources */,
 				E253194E2C2E80A500270AEC /* ToDoListViewControllerDelegate.swift in Sources */,
 				E25319352C2C87D500270AEC /* TaskListViewModel.swift in Sources */,
 				E253193D2C2DCF7400270AEC /* ToDoTableViewCell.swift in Sources */,

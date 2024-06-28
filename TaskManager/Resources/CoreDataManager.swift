@@ -9,9 +9,11 @@ import CoreData
 import Foundation
 
 class CoreDataManager {
-   static let shared = CoreDataManager()
+  
+    static let shared = CoreDataManager()
     
     private init() {}
+    
     var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Tasks")
         container.loadPersistentStores { _, error in
@@ -40,7 +42,7 @@ class CoreDataManager {
     func getAll() -> [Task] {
         var tasks = [Task] ()
         let fatchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-        let sortByDueDate = NSSortDescriptor(key: "dueDate", ascending: true)
+        let sortByDueDate = NSSortDescriptor(key: "due_date", ascending: true)
         fatchRequest.sortDescriptors = [sortByDueDate]
         do {
             tasks = try context.fetch(fatchRequest)
@@ -52,15 +54,33 @@ class CoreDataManager {
     
     func addNewTask(name: String , desp: String , dueDate: Date) {
         let task = Task(context: context)
-        task.name = name
-        task.desp = desp
-        task.dueDate = dueDate
+        task.task_name = name
+        task.task_details = desp
+        task.due_date = dueDate
         
         task.id = UUID()
-        task.completed = false
-        task.completedOn = dueDate.advanced(by: 100000)
+        task.task_status = false
+        task.completion_date = dueDate.advanced(by: 100000)
         saveContext()
     }
+    
+    func updateTask(id: UUID, name: String , desp: String , dueDate: Date) {
+        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id=%@", id.uuidString)
+        do {
+            let fetchedTasks = try context.fetch(fetchRequest)
+            if let dbTask = fetchedTasks.first {
+                dbTask.task_name = name
+                dbTask.task_details = desp
+                dbTask.due_date = dueDate
+                dbTask.completion_date = dueDate.advanced(by: 100000)
+            }
+            saveContext()
+        } catch  let  error {
+            print(error.localizedDescription)
+        }
+    }
+    
     
     func toggleCompleted(id: UUID) {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
@@ -74,9 +94,9 @@ class CoreDataManager {
 //                }
 //            }
             if let fetchedTask = try context.fetch(fetchRequest).first(where: { $0.id == id}){
-                fetchedTask.completed = !fetchedTask.completed
-                if fetchedTask.completed {
-                    fetchedTask.completedOn = Date()
+                fetchedTask.task_status = !fetchedTask.task_status
+                if fetchedTask.task_status {
+                    fetchedTask.completion_date = Date()
                 }
             }
             saveContext()
@@ -87,7 +107,7 @@ class CoreDataManager {
         }
     }
     
-    func deleteTask(id: UUID) {
+    func deleteTask(by id: UUID) {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id=%@", id.uuidString)
         do {
@@ -99,9 +119,7 @@ class CoreDataManager {
         } catch  let  error {
             print(error.localizedDescription)
         }
-        
-            
-        
     }
+    
     
 }
